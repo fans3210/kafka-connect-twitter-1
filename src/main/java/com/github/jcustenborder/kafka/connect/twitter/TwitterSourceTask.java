@@ -64,6 +64,7 @@ public class TwitterSourceTask extends SourceTask implements StatusListener {
     }
 
     FilterQuery filterQuery = new FilterQuery();
+    filterQuery.language("en");
     filterQuery.track(keywords);
     if (!this.config.filterUserIds.isEmpty()) {
       long[] userIds = this.config.filterUserIds.stream().mapToLong(Long::valueOf).toArray();
